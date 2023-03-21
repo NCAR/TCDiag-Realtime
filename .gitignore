@@ -1,0 +1,5 @@
+# Ignore all the Pycharm-related stuff
+.idea/
+
+# Ignore the tcdiag_driver (this will be a separate repository that is nested within this repository but not part of it)
+tc_diag_driver/
