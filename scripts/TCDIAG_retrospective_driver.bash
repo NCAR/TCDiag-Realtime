@@ -7,6 +7,7 @@
 # JLV: Added this so that the script gets the calling path when run from cron (otherwise, it just gets the user's home directory)
 cd "$(dirname "$0")"
 
+cd ..
 WORKDIR=`pwd`
 
 if [[ ${1} == "" ]]
@@ -91,7 +92,7 @@ echo ""
 echo "Start TCDIAG run script for ${dtg}"
 echo ""
 echo "Here is the command that will be run:"
-echo       bash "${WORKDIR}/run_tcdiag.bash" $WORKDIR'/' ${yyyy} ${mm} ${dd} ${hh}
-bash "${WORKDIR}/run_tcdiag.bash" $WORKDIR'/' ${yyyy} ${mm} ${dd} ${hh}
+echo       bash "${WORKDIR}/scripts/run_tcdiag.bash" $WORKDIR'/' ${yyyy} ${mm} ${dd} ${hh}
+bash "${WORKDIR}/scripts/run_tcdiag.bash" $WORKDIR'/' ${yyyy} ${mm} ${dd} ${hh}
 
 exit 0
