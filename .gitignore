@@ -7,8 +7,5 @@ tc_diag_driver/
 # Ignore the directory containing log files
 logs/
 
-# Ignore the directory containing specification files to be run
-to_run/
-
 # Ignore the directory containing specification files that have already been run
-already_run/
+config/already_ran/
