@@ -102,7 +102,7 @@ then
    output_base_dir=""
    maindir="$(pwd)/"
    configdir="${maindir}/config/"
-   realtime="True"
+   logdir="${maindir}/logs/"
 
 fi
 
@@ -120,6 +120,7 @@ then
    output_base_dir="/glade/work/jvigh/HFIP-EnsRI/data_output/DIAGNOSTICS/TCDIAG/"
    maindir="$(pwd)/"
    configdir="${maindir}/config/"
+   logdir="${maindir}/logs/"
 
 fi
 
@@ -141,7 +142,7 @@ do
       mkdir -p ${output_dir}
    fi
 
-   model_spec_filename="entry_spec_${stormid}_${yr}${mo}${da}_${hh}.yml"
+   model_spec_filename="entry_spec_${stormid}_${yr}${mo}${da}_${hr}.yml"
 
    #
    # Create model_spec config file for tcdiag_driver
@@ -150,12 +151,12 @@ do
    echo "  - model_spec: /glade/work/jvigh/HFIP-EnsRI/TCDiag-use-cases/config/gfs_spec_casper.yml"      >> ${configdir}${model_spec_filename}
    echo "    atcf_id: ${stormid}"                                                                       >> ${configdir}${model_spec_filename}
    echo "    model_time: ${yr}-${mo}-${da}T${hr}:00:00"                                                 >> ${configdir}${model_spec_filename}
-   echo "    atcf_file: /glade/work/jvigh/HFIP-EnsRI/data_input/ATCF/adecks_open/a${yr}/${stormid}.dat" >> ${configdir}${model_spec_filename}
+   echo "    atcf_file: /glade/work/jvigh/HFIP-EnsRI/data_input/ATCF/adecks_open/${yr}/a${stormid}.dat" >> ${configdir}${model_spec_filename}
    echo "    output_dir: ${output_dir}"                                                                 >> ${configdir}${model_spec_filename}
    #
    # Run tcdiag_driver to create the diagnostics for this initialization for a given storm/forecast
    cd tc_diag_driver/tc_diag_driver
-   python -m tc_diag_driver.driver ../../config/${model_spec_filename} ../tests/land_lut/current_operational_gdland.dat > tcdiag_${storm_id}_${yr}${mo}${da}_${hh}.log 2>&1
+   python -m tc_diag_driver.driver ../../config/${model_spec_filename} ../tests/land_lut/current_operational_gdland.dat > ${logdir}tcdiag_${storm_id}_${yr}${mo}${da}_${hr}.log 2>&1
 
    echo ""
    echo "output_dir = ${output_dir}"
