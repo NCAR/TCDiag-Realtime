@@ -139,21 +139,21 @@ do
       mkdir -p ${output_dir}
    fi
 
-   model_spec_filename="entry_spec_${stormid}_${yr}${mm}${da}_${hh}.yml"
+   model_spec_filename="entry_spec_${stormid}_${yr}${mo}${da}_${hh}.yml"
 
    #
    # Create model_spec config file for tcdiag_driver
-   echo "---"                                                                                          >  ${model_spec_filename}
-   echo "model_entries:"                                                                               >> ${model_spec_filename}
-   echo "  - model_spec: /glade/work/jvigh/HFIP-EnsRI/TCDIAG/config/gfs_spec_casper.yml"               >> ${model_spec_filename}
-   echo "    atcf_id: ${stormid}"                                                                      >> ${model_spec_filename}
-   echo "    model_time: ${yr}-${mo}-${da}T${hr}:00:00"                                                >> ${model_spec_filename}
-   echo "    atcf_file: /glade/work/jvigh/HFIP-EnsRI/data_input/ATCF/adecks_open/${yr}/${stormid}.dat" >> ${model_spec_filename}
-   echo "    output_dir: ${output_dir}"                                                                >> ${model_spec_filename}
+   echo "---"                                                                                           >  ${model_spec_filename}
+   echo "model_entries:"                                                                                >> ${model_spec_filename}
+   echo "  - model_spec: /glade/work/jvigh/HFIP-EnsRI/TCDIAG/config/gfs_spec_casper.yml"                >> ${model_spec_filename}
+   echo "    atcf_id: ${stormid}"                                                                       >> ${model_spec_filename}
+   echo "    model_time: ${yr}-${mo}-${da}T${hr}:00:00"                                                 >> ${model_spec_filename}
+   echo "    atcf_file: /glade/work/jvigh/HFIP-EnsRI/data_input/ATCF/adecks_open/a${yr}/${stormid}.dat" >> ${model_spec_filename}
+   echo "    output_dir: ${output_dir}"                                                                 >> ${model_spec_filename}
    #
    # Run tcdiag_driver to create the diagnostics for this initialization for a given storm/forecast
    cd tc_diag_driver/tc_diag_driver
-   python -m tc_diag_driver.driver ../../config/${model_spec_filename} ../tests/land_lut/current_operational_gdland.dat > tcdiag_${storm_id}_${yr}${mm}${da}_${hh}.log 2>&1
+   python -m tc_diag_driver.driver ../../config/${model_spec_filename} ../tests/land_lut/current_operational_gdland.dat > tcdiag_${storm_id}_${yr}${mo}${da}_${hh}.log 2>&1
 
    echo ""
    echo "output_dir = ${output_dir}"
