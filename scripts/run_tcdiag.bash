@@ -101,6 +101,7 @@ then
    stormlist_dir="/d2/projects/TCGP/data/data_realtime${beta}/ATCF/active_stormlist/${yr}/"
    output_base_dir=""
    maindir="$(pwd)/"
+   configdir="${maindir}/config/"
    realtime="True"
 
 fi
@@ -118,6 +119,7 @@ then
    stormlist_dir="/glade/work/jvigh/HFIP-EnsRI/data_input/active_stormlist/${yr}/"
    output_base_dir="/glade/work/jvigh/HFIP-EnsRI/data_output/DIAGNOSTICS/TCDIAG/"
    maindir="$(pwd)/"
+   configdir="${maindir}/config/"
 
 fi
 
@@ -143,13 +145,13 @@ do
 
    #
    # Create model_spec config file for tcdiag_driver
-   echo "---"                                                                                           >  ${model_spec_filename}
-   echo "model_entries:"                                                                                >> ${model_spec_filename}
-   echo "  - model_spec: /glade/work/jvigh/HFIP-EnsRI/TCDIAG/config/gfs_spec_casper.yml"                >> ${model_spec_filename}
-   echo "    atcf_id: ${stormid}"                                                                       >> ${model_spec_filename}
-   echo "    model_time: ${yr}-${mo}-${da}T${hr}:00:00"                                                 >> ${model_spec_filename}
-   echo "    atcf_file: /glade/work/jvigh/HFIP-EnsRI/data_input/ATCF/adecks_open/a${yr}/${stormid}.dat" >> ${model_spec_filename}
-   echo "    output_dir: ${output_dir}"                                                                 >> ${model_spec_filename}
+   echo "---"                                                                                           >  ${configdir}${model_spec_filename}
+   echo "model_entries:"                                                                                >> ${configdir}${model_spec_filename}
+   echo "  - model_spec: /glade/work/jvigh/HFIP-EnsRI/TCDIAG/config/gfs_spec_casper.yml"                >> ${configdir}${model_spec_filename}
+   echo "    atcf_id: ${stormid}"                                                                       >> ${configdir}${model_spec_filename}
+   echo "    model_time: ${yr}-${mo}-${da}T${hr}:00:00"                                                 >> ${configdir}${model_spec_filename}
+   echo "    atcf_file: /glade/work/jvigh/HFIP-EnsRI/data_input/ATCF/adecks_open/a${yr}/${stormid}.dat" >> ${configdir}${model_spec_filename}
+   echo "    output_dir: ${output_dir}"                                                                 >> ${configdir}${model_spec_filename}
    #
    # Run tcdiag_driver to create the diagnostics for this initialization for a given storm/forecast
    cd tc_diag_driver/tc_diag_driver
@@ -158,7 +160,7 @@ do
    echo ""
    echo "output_dir = ${output_dir}"
    echo "Have finished running for: ${model_spec_filename}"
-   mv ${model_spec_filename}
+   mv ${configdir}${model_spec_filename} ${configdir}"already_ran/"
    echo ""
 
    cd ${maindir}
