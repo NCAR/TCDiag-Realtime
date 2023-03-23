@@ -156,7 +156,7 @@ do
    #
    # Run tcdiag_driver to create the diagnostics for this initialization for a given storm/forecast
    cd tc_diag_driver/tc_diag_driver
-   python -m tc_diag_driver.driver ../../config/${model_spec_filename} ../tests/land_lut/current_operational_gdland.dat > ${logdir}tcdiag_${storm_id}_${yr}${mo}${da}_${hr}.log 2>&1
+   python -m tc_diag_driver.driver ../../config/${model_spec_filename} ../tests/land_lut/current_operational_gdland.dat > ${logdir}tcdiag_${stormid}_${yr}${mo}${da}_${hr}.log 2>&1
 
    echo ""
    echo "output_dir = ${output_dir}"
