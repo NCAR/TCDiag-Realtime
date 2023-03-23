@@ -147,7 +147,7 @@ do
    # Create model_spec config file for tcdiag_driver
    echo "---"                                                                                           >  ${configdir}${model_spec_filename}
    echo "model_entries:"                                                                                >> ${configdir}${model_spec_filename}
-   echo "  - model_spec: /glade/work/jvigh/HFIP-EnsRI/TCDIAG/config/gfs_spec_casper.yml"                >> ${configdir}${model_spec_filename}
+   echo "  - model_spec: /glade/work/jvigh/HFIP-EnsRI/TCDiag-use-cases/config/gfs_spec_casper.yml"      >> ${configdir}${model_spec_filename}
    echo "    atcf_id: ${stormid}"                                                                       >> ${configdir}${model_spec_filename}
    echo "    model_time: ${yr}-${mo}-${da}T${hr}:00:00"                                                 >> ${configdir}${model_spec_filename}
    echo "    atcf_file: /glade/work/jvigh/HFIP-EnsRI/data_input/ATCF/adecks_open/a${yr}/${stormid}.dat" >> ${configdir}${model_spec_filename}
