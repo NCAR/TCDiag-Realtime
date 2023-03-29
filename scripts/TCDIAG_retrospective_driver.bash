@@ -20,6 +20,24 @@ else
    yyyymmddhh=${1}
 fi
 
+if [[ ${2} == "" ]]
+then
+   echo "TCDIAG_driver.bash: ERROR: The second command line argument must be the subdirectory of the adecks collection to use."
+   exit 1
+else
+   adecks_collection=${2}
+fi
+
+if [[ ${3} == "" ]]
+then
+   echo "TCDIAG_driver.bash: ERROR: The third command line argument must be the subdirectory of the active stormlist collection to use."
+   exit 1
+else
+   stormlist_collection=${2}
+fi
+
+
+
 hh=$(echo ${yyyymmddhh} | cut -c9-10)
 
 # JLV: Added this so that the code can access the needed NetCFD library shared object.
@@ -93,6 +111,6 @@ echo "Start TCDIAG run script for ${dtg}"
 echo ""
 echo "Here is the command that will be run:"
 echo       bash "${WORKDIR}/scripts/run_tcdiag.bash" $WORKDIR'/' ${yyyy} ${mm} ${dd} ${hh}
-bash "${WORKDIR}/scripts/run_tcdiag.bash" $WORKDIR'/' ${yyyy} ${mm} ${dd} ${hh}
+bash "${WORKDIR}/scripts/run_tcdiag.bash" $WORKDIR'/' ${yyyy} ${mm} ${dd} ${hh} ${adecks_collection} ${stormlist_collection}
 
 exit 0

@@ -42,6 +42,23 @@ else
    hr=${5}
 fi
 
+if [[ ${6} == "" ]]
+then
+   echo "run_tcdiag.bash: ERROR: The sixth command line argument must be the subdirectory of the adecks collection to use."
+   exit 1
+else
+   adecks_collection=${6}
+fi
+
+if [[ ${7} == "" ]]
+then
+   echo "run_tcdiag.bash: ERROR: The seventh command line argument must be the subdirectory of the active stormlist collection to use."
+   exit 1
+else
+   stormlist_collection=${7}
+fi
+
+
 
 ############
 # HARDCODING DATES
@@ -98,7 +115,7 @@ then
 
    realtime="True"
    beta="-beta"
-   stormlist_dir="/d2/projects/TCGP/data/data_realtime${beta}/ATCF/active_stormlist/${yr}/"
+   stormlist_dir="/d2/projects/TCGP/data/data_realtime${beta}/ATCF/active_stormlist/${stormlist_collection}/${yr}/"
    output_base_dir=""
    maindir="$(pwd)/"
    configdir="${maindir}/config/"
@@ -116,7 +133,7 @@ then
    # export PATH=${PATH}:/usr/local/netcdf:/usr/local/netcdf/lib:
 
    realtime="False"
-   stormlist_dir="/glade/work/jvigh/HFIP-EnsRI/data_input/active_stormlist/${yr}/"
+   stormlist_dir="/glade/work/jvigh/HFIP-EnsRI/data_input/active_stormlist/${stormlist_collection}/${yr}/"
    output_base_dir="/glade/work/jvigh/HFIP-EnsRI/data_output/DIAGNOSTICS/TCDIAG/"
    maindir="$(pwd)/"
    configdir="${maindir}/config/"
@@ -151,7 +168,7 @@ do
    echo "  - model_spec: /glade/work/jvigh/HFIP-EnsRI/TCDiag-use-cases/config/gfs_spec_casper.yml"      >> ${configdir}${model_spec_filename}
    echo "    atcf_id: ${stormid}"                                                                       >> ${configdir}${model_spec_filename}
    echo "    model_time: ${yr}-${mo}-${da}T${hr}:00:00"                                                 >> ${configdir}${model_spec_filename}
-   echo "    atcf_file: /glade/work/jvigh/HFIP-EnsRI/data_input/ATCF/adecks_open/${yr}/a${stormid}.dat" >> ${configdir}${model_spec_filename}
+   echo "    atcf_file: /glade/work/jvigh/HFIP-EnsRI/data_input/ATCF/${adecks_collection}/${yr}/a${stormid}.dat" >> ${configdir}${model_spec_filename}
    echo "    output_dir: ${output_dir}"                                                                 >> ${configdir}${model_spec_filename}
    #
    # Run tcdiag_driver to create the diagnostics for this initialization for a given storm/forecast
