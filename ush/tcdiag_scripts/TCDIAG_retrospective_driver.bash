@@ -7,7 +7,7 @@
 # JLV: Added this so that the script gets the calling path when run from cron (otherwise, it just gets the user's home directory)
 cd "$(dirname "$0")"
 
-cd ..
+cd ../..
 WORKDIR=`pwd`
 
 if [[ ${1} == "" ]]
