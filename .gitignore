@@ -8,4 +8,4 @@ tc_diag_driver/
 logs/
 
 # Ignore the directory containing specification files that have already been run
-config/already_ran/
+parm/tcdiag_config/already_ran/

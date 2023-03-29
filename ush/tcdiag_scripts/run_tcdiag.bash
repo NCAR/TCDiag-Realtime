@@ -162,18 +162,18 @@ do
    model_spec_filename="entry_spec_${stormid}_${yr}${mo}${da}_${hr}.yml"
 
    #
-   # Create model_spec config file for tcdiag_driver
-   echo "---"                                                                                           >  ${configdir}${model_spec_filename}
-   echo "model_entries:"                                                                                >> ${configdir}${model_spec_filename}
-   echo "  - model_spec: /glade/work/jvigh/HFIP-EnsRI/TCDiag-use-cases/config/gfs_spec_casper.yml"      >> ${configdir}${model_spec_filename}
-   echo "    atcf_id: ${stormid}"                                                                       >> ${configdir}${model_spec_filename}
-   echo "    model_time: ${yr}-${mo}-${da}T${hr}:00:00"                                                 >> ${configdir}${model_spec_filename}
-   echo "    atcf_file: /glade/work/jvigh/HFIP-EnsRI/data_input/ATCF/${adecks_collection}/${yr}/a${stormid}.dat" >> ${configdir}${model_spec_filename}
-   echo "    output_dir: ${output_dir}"                                                                 >> ${configdir}${model_spec_filename}
+   # Create model_spec tcdiag_config file for tcdiag_driver
+   echo "---"                                                                                                      >  ${configdir}${model_spec_filename}
+   echo "model_entries:"                                                                                          >> ${configdir}${model_spec_filename}
+   echo "  - model_spec: /glade/work/jvigh/HFIP-EnsRI/TCDiag-use-cases/parm/tcdiag_config/gfs_spec_casper.yml"    >> ${configdir}${model_spec_filename}
+   echo "    atcf_id: ${stormid}"                                                                                 >> ${configdir}${model_spec_filename}
+   echo "    model_time: ${yr}-${mo}-${da}T${hr}:00:00"                                                           >> ${configdir}${model_spec_filename}
+   echo "    atcf_file: /glade/work/jvigh/HFIP-EnsRI/data_input/ATCF/${adecks_collection}/${yr}/a${stormid}.dat"  >> ${configdir}${model_spec_filename}
+   echo "    output_dir: ${output_dir}"                                                                           >> ${configdir}${model_spec_filename}
    #
    # Run tcdiag_driver to create the diagnostics for this initialization for a given storm/forecast
    cd tc_diag_driver/tc_diag_driver
-   python -m tc_diag_driver.driver ../../config/${model_spec_filename} ../tests/land_lut/current_operational_gdland.dat > ${logdir}tcdiag_${stormid}_${yr}${mo}${da}_${hr}.log 2>&1
+   python -m tc_diag_driver.driver ../../parm/tcdiag_config/${model_spec_filename} ../tests/land_lut/current_operational_gdland.dat > ${logdir}tcdiag_${stormid}_${yr}${mo}${da}_${hr}.log 2>&1
 
    echo ""
    echo "output_dir = ${output_dir}"

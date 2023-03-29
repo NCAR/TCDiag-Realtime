@@ -110,7 +110,7 @@ echo ""
 echo "Start TCDIAG run script for ${dtg}"
 echo ""
 echo "Here is the command that will be run:"
-echo       bash "${WORKDIR}/scripts/run_tcdiag.bash" $WORKDIR'/' ${yyyy} ${mm} ${dd} ${hh}
-bash "${WORKDIR}/scripts/run_tcdiag.bash" $WORKDIR'/' ${yyyy} ${mm} ${dd} ${hh} ${adecks_collection} ${stormlist_collection}
+echo       bash "${WORKDIR}/ush/tcdiag_scripts/run_tcdiag.bash" $WORKDIR'/' ${yyyy} ${mm} ${dd} ${hh}
+bash "${WORKDIR}/ush/tcdiag_scripts/run_tcdiag.bash" $WORKDIR'/' ${yyyy} ${mm} ${dd} ${hh} ${adecks_collection} ${stormlist_collection}
 
 exit 0

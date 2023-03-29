@@ -1,6 +1,6 @@
 ---
 model_entries:
-  - model_spec: /glade/work/jvigh/HFIP-EnsRI/TCDIAG/config/gfs_spec_casper.yml
+  - model_spec: /glade/work/jvigh/HFIP-EnsRI/TCDIAG/parm/tcdiag_config/gfs_spec_casper.yml
     atcf_id: al172022
     model_time: 2022-11-09T12:00:00
     atcf_file: /glade/work/jvigh/HFIP-EnsRI/data_input/ATCF/adecks_open/2022/aal172022.dat
