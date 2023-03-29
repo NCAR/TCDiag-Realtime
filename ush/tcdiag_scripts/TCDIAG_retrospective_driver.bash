@@ -33,7 +33,7 @@ then
    echo "TCDIAG_driver.bash: ERROR: The third command line argument must be the subdirectory of the active stormlist collection to use."
    exit 1
 else
-   stormlist_collection=${2}
+   stormlist_collection=${3}
 fi
 
 
