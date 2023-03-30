@@ -1,5 +1,12 @@
 #!/bin/bash
-#
+# script run_tcdiag.bash
+# The purpose of this script is to run the python-based TCDiag code using inputs that have been passed down from the EnsRI driver through the TCDIAG_driver.bash script.
+
+echo ""
+echo "==========================================================="
+echo " Entering run_tcdiag.bash"
+echo "==========================================================="
+echo ""
 
 if [[ ${1} == "" ]]
 then
