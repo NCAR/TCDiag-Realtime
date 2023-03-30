@@ -125,7 +125,7 @@ then
    stormlist_dir="/d2/projects/TCGP/data/data_realtime${beta}/ATCF/active_stormlist/${stormlist_collection}/${yr}/"
    output_base_dir=""
    maindir="$(pwd)/"
-   configdir="${maindir}/config/"
+   configdir="${maindir}/parm/tcdiag_config/"
    logdir="${maindir}/logs/"
 
 fi
@@ -143,7 +143,7 @@ then
    stormlist_dir="/glade/work/jvigh/HFIP-EnsRI/data_input/active_stormlist/${stormlist_collection}/${yr}/"
    output_base_dir="/glade/work/jvigh/HFIP-EnsRI/data_output/DIAGNOSTICS/TCDIAG/"
    maindir="$(pwd)/"
-   configdir="${maindir}/config/"
+   configdir="${maindir}/parm/tcdiag_config/"
    logdir="${maindir}/logs/"
 
 fi
