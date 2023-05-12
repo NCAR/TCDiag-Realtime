@@ -106,7 +106,7 @@ echo "Run tcpairs for ${dtg}"
 echo ""
 
 echo "Here is the command that will be run:"
-echo       run_metplus.py "${WORKDIR}/user_config/system_config.${long_hostname}" "${WORKDIR}/parm/TCPairs_Read_TCDiag.config"
-run_metplus.py "${WORKDIR}/user_config/system_config.${long_hostname}" "${WORKDIR}/parm/TCPairs_Read_TCDia.config"
+echo       run_metplus.py "${WORKDIR}/parm/user_config/system_config.${long_hostname}" "${WORKDIR}/parm/metplus_config/TCPairs_Read_TCDiag.config"
+run_metplus.py "${WORKDIR}/parm/user_config/system_config.${long_hostname}" "${WORKDIR}/parm/metplus_config/TCPairs_Read_TCDia.config"
 
 exit 0
