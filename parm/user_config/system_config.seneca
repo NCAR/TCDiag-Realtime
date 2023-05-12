@@ -5,7 +5,7 @@
 # If running on a physical machine, the suffix should match the result that is returned by the hostname command.
 # If running on a virtual instance, the suffix should match the name of the virtual platform (e.g., docker)
 #
-# This was last updated by Jonathan Vigh on 04/19/2023.
+# This was last updated by Jonathan Vigh on 05/10/2023.
 #=======================================================================================================================
 
 #-----------------------------------------------------------------------------------------------------------------------
@@ -14,16 +14,16 @@
 [dir]
 
 # The above four directories are always required by METplus
-INPUT_BASE = /d1/projects/TCDiag/input_data_realtime                                    ;; base location of input data
-OUTPUT_BASE = /d1/projects/TCDiag/output_metplus                                        ;; base location for output
-MET_INSTALL_DIR = /usr/local/met-11.0.1                                                 ;; path where MET tools are installed
-MET_BIN_DIR = /usr/local/met-11.0.1/bin                                                 ;; path where MET tool executables are installed
-TMP_DIR=/tmp                                                                            ;; path where temporary files can be written
+INPUT_BASE = /d1/projects/TCDiag/data_input                                               ;; base location of input data
+OUTPUT_BASE = /d1/projects/TCDiag/data_output                                             ;; base location for output
+MET_INSTALL_DIR = /usr/local/met-11.0.0                                                   ;; path where MET tools are installed
+MET_BIN_DIR = /usr/local/met-11.0.0/bin                                                   ;; path where MET tool executables are installed
+TMP_DIR=/tmp                                                                              ;; path where temporary files can be written
 
 # The following directories required by the real-time evaluation system
-PROJECT_BASE = /d1/projects/TCDiag/TCDiag-use-cases                                     ;; path where the project repo exists
-LOG_BASE = /d1/projects/TCDiag/log                                                      ;; base location for log files
-METPLUS_RUN_DIR = /usr/local/METplus-5.0.1/ush                                          ;; path where METplus is installed
+PROJECT_BASE = /d1/projects/TCDiag/TCDiag-use-cases                                       ;; path where the project repo exists
+LOG_BASE = /d1/projects/TCDiag/log                                                        ;; base location for log files
+METPLUS_RUN_DIR = /usr/local/METplus-5.0.0/ush                                            ;; path where METplus is installed
 # NOTE: On Seneca, we are using a system-wide installation of METplus which corresponds to the current develop branch
 #       On an operational system, it would be good to use a release version of METplus.
 MET_MASK_DIR = /d1/projects/TCDiag/masks
@@ -32,37 +32,37 @@ MET_MASK_DIR = /d1/projects/TCDiag/masks
 # The settings below are examples from the SWPC-Realtime-Evaluation project and are not currently used in the TCDiag system
 
 # Set up the paths to be used when uploading data to METviewer, either from the local machine or a remote machine.
-METVIEWER_DATABASE = mv_SWPC_Realtime_Evaluation                                        ;; the name of the database in METviewer
-METVIEWER_MANAGEMENT_SYSTEM = mariadb                                                   ;; the management system for METviewer database
-METVIEWER_INSTANCE_HOST = mohawk.rap.ucar.edu                                           ;; the host of the METviewer instance
-METVIEWER_RUN_LOCAL_OR_REMOTE = remote                                                  ;; whether METviewer will run 'local' or 'remote'
+METVIEWER_DATABASE = mv_TCDiag                                                            ;; the name of the database in METviewer
+METVIEWER_MANAGEMENT_SYSTEM = mariadb                                                     ;; the management system for METviewer database
+METVIEWER_INSTANCE_HOST = mohawk.rap.ucar.edu                                             ;; the host of the METviewer instance
+METVIEWER_RUN_LOCAL_OR_REMOTE = remote                                                    ;; whether METviewer will run 'local' or 'remote'
 
-REMOTE_USER = jvigh                                                                     ;; the user under which the script will be executed on the remote machine
-REMOTE_MACHINE = dakota.rap.ucar.edu                                                    ;; full name of the remote machine where METviewer is installed
-REMOTE_PROJECT_BASE = /d2/jvigh/PROJECTS/VX/SWPC/swpc-rt/SWPC-Realtime-Evaluation       ;; project root on remote machine
-REMOTE_LOG_BASE = /d2/jvigh/PROJECTS/VX/SWPC/swpc-rt/log/SWPC-Realtime-Evaluation       ;; log path on remote machine
-REMOTE_OUTPUT_BASE = /d2/jvigh/PROJECTS/VX/SWPC/swpc-rt/output_metplus/output_realtime  ;; path to OUTPUT_BASE on remote machine
-REMOTE_METVIEWER_APP_DIR = /d2/jvigh/PROJECTS/VX/SWPC/temp_METviewer_scripts            ;; path to METviewer app on remote machine   ; JLV: 09/27/22: SHOULD NORMALLY BE: /d3/projects/METViewer/src/apps/METviewer but using a temporary location until Tatiana is back from vacation
-REMOTE_METVIEWER_RSCRIPTS_DIR = /d3/projects/METViewer/src/apps/METviewer               ;; path to METviewer R scripts on the remote machine # NOTE: was /d3/projects/METViewer similar to the setup for Docker, but this didn't work for METviewer on Dakota
-REMOTE_METVIEWER_SCORECARD_DIR = /d2/jvigh/PROJECTS/VX/SWPC/swpc-rt/scorecards          ;; path for METviewer scorecards
-REMOTE_METVIEWER_WORKING_DIR = /d2/jvigh/PROJECTS/VX/SWPC/swpc-rt/metv                  ;; path for METviewer plots/data/scripts
-REMOTE_METVIEWER_USER_NAME = mvuser                                                     ;; the username for the METviewer user
-REMOTE_METVIEWER_USER_PASSWORD = mvuser                                                 ;; the password for the METviewer user
-REMOTE_R_DIR = /usr/local/R                                                             ;; path to R on the remote machine
-REMOTE_XML_QUEUE_DIR = /d2/jvigh/PROJECTS/VX/SWPC/swpc-rt/queued_xml                    ;; path for queued xml files
-REMOTE_PLOT_BASE_DIR = /d2/jvigh/PROJECTS/VX/SWPC/swpc-rt/plots                         ;; path for plots
-REMOTE_ANIMATION_BASE_DIR = /d2/jvigh/PROJECTS/VX/SWPC/swpc-rt/animations               ;; path for animations
+# REMOTE_USER = jvigh                                                                     ;; the user under which the script will be executed on the remote machine
+# REMOTE_MACHINE = dakota.rap.ucar.edu                                                    ;; full name of the remote machine where METviewer is installed
+# REMOTE_PROJECT_BASE = /d2/jvigh/PROJECTS/VX/SWPC/swpc-rt/SWPC-Realtime-Evaluation       ;; project root on remote machine
+# REMOTE_LOG_BASE = /d2/jvigh/PROJECTS/VX/SWPC/swpc-rt/log/SWPC-Realtime-Evaluation       ;; log path on remote machine
+# REMOTE_OUTPUT_BASE = /d2/jvigh/PROJECTS/VX/SWPC/swpc-rt/output_metplus/output_realtime  ;; path to OUTPUT_BASE on remote machine
+# REMOTE_METVIEWER_APP_DIR = /d2/jvigh/PROJECTS/VX/SWPC/temp_METviewer_scripts            ;; path to METviewer app on remote machine   ; JLV: 09/27/22: SHOULD NORMALLY BE: /d3/projects/METViewer/src/apps/METviewer but using a temporary location until Tatiana is back from vacation
+# REMOTE_METVIEWER_RSCRIPTS_DIR = /d3/projects/METViewer/src/apps/METviewer               ;; path to METviewer R scripts on the remote machine # NOTE: was /d3/projects/METViewer similar to the setup for Docker, but this didn't work for METviewer on Dakota
+# REMOTE_METVIEWER_SCORECARD_DIR = /d2/jvigh/PROJECTS/VX/SWPC/swpc-rt/scorecards          ;; path for METviewer scorecards
+# REMOTE_METVIEWER_WORKING_DIR = /d2/jvigh/PROJECTS/VX/SWPC/swpc-rt/metv                  ;; path for METviewer plots/data/scripts
+# REMOTE_METVIEWER_USER_NAME = mvuser                                                     ;; the username for the METviewer user
+# REMOTE_METVIEWER_USER_PASSWORD = mvuser                                                 ;; the password for the METviewer user
+# REMOTE_R_DIR = /usr/local/R                                                             ;; path to R on the remote machine
+# REMOTE_XML_QUEUE_DIR = /d2/jvigh/PROJECTS/VX/SWPC/swpc-rt/queued_xml                    ;; path for queued xml files
+# REMOTE_PLOT_BASE_DIR = /d2/jvigh/PROJECTS/VX/SWPC/swpc-rt/plots                         ;; path for plots
+# REMOTE_ANIMATION_BASE_DIR = /d2/jvigh/PROJECTS/VX/SWPC/swpc-rt/animations               ;; path for animations
 
-LOCAL_METVIEWER_APP_DIR = /d1/jvigh/UTILITIES/METViewer/src/apps/METviewer    ;; path to METviewer app on local machine
-LOCAL_METVIEWER_RSCRIPTS_DIR = /d1/jvigh/UTILITIES/METViewer                  ;; path to METviewer R scripts on local machine
-LOCAL_METVIEWER_SCORECARD_DIR = /d1/jvigh/PROJECTS/VX/SWPC/swpc-rt/scorecards ;; path for METviewer scorecards
-LOCAL_METVIEWER_WORKING_DIR = /d1/jvigh/PROJECTS/VX/SWPC/metv                 ;; path for METviewer plots/data/scripts
-LOCAL_METVIEWER_USER_NAME = mvuser                                            ;; the username for the METviewer user
-LOCAL_METVIEWER_USER_PASSWORD = mvuser                                        ;; the password for the METviewer user
-LOCAL_R_DIR = /usr/local/R                                                    ;; path to R on the local machine
-LOCAL_XML_QUEUE_DIR = /d1/jvigh/PROJECTS/VX/SWPC/swpc-rt/queued_xml           ;; path for queued xml files
-LOCAL_PLOT_BASE_DIR = /d1/jvigh/PROJECTS/VX/SWPC/swpc-rt/plots                ;; path for METviewer plots
-LOCAL_ANIMATION_BASE_DIR = /d1/jvigh/PROJECTS/VX/SWPC/swpc-rt/animations      ;; path for animations
+# LOCAL_METVIEWER_APP_DIR = /d1/jvigh/UTILITIES/METViewer/src/apps/METviewer              ;; path to METviewer app on local machine
+# LOCAL_METVIEWER_RSCRIPTS_DIR = /d1/jvigh/UTILITIES/METViewer                            ;; path to METviewer R scripts on local machine
+# LOCAL_METVIEWER_SCORECARD_DIR = /d1/jvigh/PROJECTS/VX/SWPC/swpc-rt/scorecards           ;; path for METviewer scorecards
+# LOCAL_METVIEWER_WORKING_DIR = /d1/jvigh/PROJECTS/VX/SWPC/metv                           ;; path for METviewer plots/data/scripts
+# LOCAL_METVIEWER_USER_NAME = mvuser                                                      ;; the username for the METviewer user
+# LOCAL_METVIEWER_USER_PASSWORD = mvuser                                                  ;; the password for the METviewer user
+# LOCAL_R_DIR = /usr/local/R                                                              ;; path to R on the local machine
+# LOCAL_XML_QUEUE_DIR = /d1/jvigh/PROJECTS/VX/SWPC/swpc-rt/queued_xml                     ;; path for queued xml files
+# LOCAL_PLOT_BASE_DIR = /d1/jvigh/PROJECTS/VX/SWPC/swpc-rt/plots                          ;; path for METviewer plots
+# LOCAL_ANIMATION_BASE_DIR = /d1/jvigh/PROJECTS/VX/SWPC/swpc-rt/animations                ;; path for animations
 
 
 #-----------------------------------------------------------------------------------------------------------------------
