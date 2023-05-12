@@ -107,6 +107,6 @@ echo ""
 
 echo "Here is the command that will be run:"
 echo       run_metplus.py "${WORKDIR}/parm/user_config/system_config.${long_hostname}" "${WORKDIR}/parm/metplus_config/TCPairs_read_TCDiag.config"
-run_metplus.py "${WORKDIR}/parm/user_config/system_config.${long_hostname}" "${WORKDIR}/parm/metplus_config/TCPairs_read_TCDia.config"
+run_metplus.py "${WORKDIR}/parm/user_config/system_config.${long_hostname}" "${WORKDIR}/parm/metplus_config/TCPairs_read_TCDiag.config"
 
 exit 0
