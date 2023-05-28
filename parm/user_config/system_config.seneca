@@ -23,7 +23,9 @@ TMP_DIR=/tmp                                                                    
 # The following directories required by the real-time evaluation system
 PROJECT_BASE = /d1/projects/TCDiag/TCDiag-use-cases                                       ;; path where the project repo exists
 LOG_BASE = /d1/projects/TCDiag/log                                                        ;; base location for log files
-METPLUS_RUN_DIR = /usr/local/METplus-5.0.0/ush                                            ;; path where METplus is installed
+#METPLUS_RUN_DIR = /usr/local/METplus-5.0.0/ush                                           ;; path where METplus is installed
+METPLUS_RUN_DIR = /d1/projects/TCDiag/METplus_bugfix_2179_develop_tc_pairs_diag/ush        ;; path where METplus is installed
+
 # NOTE: On Seneca, we are using a system-wide installation of METplus which corresponds to the current develop branch
 #       On an operational system, it would be good to use a release version of METplus.
 MET_MASK_DIR = /d1/projects/TCDiag/masks
