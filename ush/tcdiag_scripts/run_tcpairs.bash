@@ -84,7 +84,8 @@ then
    echo ""
 
    # Add METplus to path
-   export PATH=/d1/personal/jvigh/METplus/ush:$PATH
+   # export PATH=/d1/personal/jvigh/METplus/ush:$PATH
+   export PATH=/d1/projects/TCDiag/METplus_bugfix_2179_develop_tc_pairs_diag/ush:$PATH
 
    # Add MET to path
    export PATH=/usr/local/met-11.0.1/bin:$PATH
@@ -107,6 +108,7 @@ echo ""
 
 echo "Running the following metplus:"
 echo " which run_metplus.py"
+which run_metplus.py
 echo ""
 echo "Here is the command that will be run:"
 echo       run_metplus.py "${WORKDIR}/parm/user_config/system_config.${long_hostname}" "${WORKDIR}/parm/metplus_config/TCPairs_read_TCDiag.config"
