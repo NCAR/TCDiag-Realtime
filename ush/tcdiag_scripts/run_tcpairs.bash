@@ -85,10 +85,13 @@ then
 
    # Add METplus to path
    # export PATH=/d1/personal/jvigh/METplus/ush:$PATH
-   export PATH=/d1/projects/TCDiag/METplus_bugfix_2179_develop_tc_pairs_diag/ush:$PATH
+   # export PATH=/d1/projects/TCDiag/METplus_bugfix_2179_develop_tc_pairs_diag/ush:$PATH
+   # export PATH=/d1/projects/TCDiag/METplus_bugfix_2179_develop_tc_pairs_diag/ush:$PATH
+   export PATH=/d1/projects/TCDiag/METplus_v5.1.0-rc2/ush:$PATH
 
    # Add MET to path
-   export PATH=/usr/local/met-11.0.1/bin:$PATH
+   # export PATH=/usr/local/met-11.0.1/bin:$PATH
+   export PATH=/d1/projects/MET/MET_releases/MET-11.1.0-rc1/bin:$PATH
 
 fi
 

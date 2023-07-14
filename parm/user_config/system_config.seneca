@@ -5,7 +5,7 @@
 # If running on a physical machine, the suffix should match the result that is returned by the hostname command.
 # If running on a virtual instance, the suffix should match the name of the virtual platform (e.g., docker)
 #
-# This was last updated by Jonathan Vigh on 05/10/2023.
+# This was last updated by Jonathan Vigh on 07/13/2023.
 #=======================================================================================================================
 
 #-----------------------------------------------------------------------------------------------------------------------
@@ -16,15 +16,18 @@
 # The above four directories are always required by METplus
 INPUT_BASE = /d1/projects/TCDiag/data_input                                               ;; base location of input data
 OUTPUT_BASE = /d1/projects/TCDiag/data_output                                             ;; base location for output
-MET_INSTALL_DIR = /usr/local/met-11.0.0                                                   ;; path where MET tools are installed
-MET_BIN_DIR = /usr/local/met-11.0.0/bin                                                   ;; path where MET tool executables are installed
+#MET_INSTALL_DIR = /usr/local/met-11.0.0                                                  ;; path where MET tools are installed
+MET_INSTALL_DIR = /d1/projects/MET/MET_releases/MET-11.1.0-rc1                            ;; path where MET tools are installed
+#MET_BIN_DIR = /usr/local/met-11.0.0/bin                                                  ;; path where MET tool executables are installed
+MET_BIN_DIR = /d1/projects/MET/MET_releases/MET-11.1.0-rc1/bin                            ;; path where MET tool executables are installed
 TMP_DIR=/tmp                                                                              ;; path where temporary files can be written
 
 # The following directories required by the real-time evaluation system
 PROJECT_BASE = /d1/projects/TCDiag/TCDiag-use-cases                                       ;; path where the project repo exists
 LOG_BASE = /d1/projects/TCDiag/log                                                        ;; base location for log files
 #METPLUS_RUN_DIR = /usr/local/METplus-5.0.0/ush                                           ;; path where METplus is installed
-METPLUS_RUN_DIR = /d1/projects/TCDiag/METplus_bugfix_2179_develop_tc_pairs_diag/ush        ;; path where METplus is installed
+#METPLUS_RUN_DIR = /d1/projects/TCDiag/METplus_bugfix_2179_develop_tc_pairs_diag/ush      ;; path where METplus is installed
+METPLUS_RUN_DIR = /d1/projects/TCDiag/METplus_v5.1.0-rc2/ush                              ;; path where METplus is installed
 
 # NOTE: On Seneca, we are using a system-wide installation of METplus which corresponds to the current develop branch
 #       On an operational system, it would be good to use a release version of METplus.
