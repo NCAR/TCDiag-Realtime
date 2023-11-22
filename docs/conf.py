@@ -21,11 +21,11 @@ print(sys.path)
 project = 'TCDiag-Realtime'
 copyright = '2023, NCAR'
 author = 'UCAR/NCAR, NOAA, CSU/CIRA'
-author_list = 'Vigh, J. L. '
+author_list = 'Vigh, J. L., Musgrave, K., Halley Gotway, J., DeMaria, R., Newman, K., Win-Gildenmeister, M., McCabe, G., Burek, T., Kucera, P. '
 version = '0.1'
 verinfo = version
 release = f'{version}'
-release_year = '2023'
+release_year = '2024'
 
 release_date = f'{release_year}-03-01'
 
