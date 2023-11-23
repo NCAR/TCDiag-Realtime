@@ -4,24 +4,15 @@ User's Guide
 
 **Foreword: A note to METplotpy users**
 
-This User's Guide is provided as an aid to users of METplotpy.  METplotpy
-contains packages for plotting in METplus as stand-alone, or part of METplus
-use case, METplus wrappers, METexpress, or METviewer. It is also a component
-of the unified METplus verification framework. More details about METplus can
+This User's Guide is provided as an aid to users of the TCDiag-Realtime use cases.  TCDiag-Realtime contains elaborated use cases for conducting real-time and retrospective verification workflows in METplus. More details about METplus can
 be found on the
 `METplus website <http://dtcenter.org/community-code/metplus>`_.
 
-It is important to note here that METplotpy is an evolving software package.
+It is important to note here that TCDiag-Realtime is an evolving software package.
 This documentation describes the |release| release dated |release_date|.
-Intermediate releases may include bug fixes. METplotpy is also able to accept
-new modules contributed by the community. If there is code you would like to
-contribute, we will gladly consider your contribution. Please create a
-post in the
-`METplus GitHub Discussions Forum <https://github.com/dtcenter/METplus/discussions>`_.
-We will determine if we will be able to include the contribution in
-a future version.
+Intermediate releases may include bug fixes.
 
-**Model Evaluation Tools Plot Py (METplotpy)  TERMS OF USE - IMPORTANT!**
+**TCDiag-Realtime TERMS OF USE - IMPORTANT!**
 
 Copyright |copyright|
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -44,52 +35,20 @@ governing permissions and limitations under the License.
 
 The citation for this User's Guide should be:
 
-|author_list|, |release_year|: The METplotpy Version |version| User's Guide.
-Developmental Testbed Center.
-Available `here <https://github.com/dtcenter/METplotpy/releases>`_.
+|author_list|, |release_year|: The TCDiag-Realtime Use Cases, Version |version| User's Guide.
+Research Applications Laboratory, National Center for Atmospheric Research.
+Available `here <https://github.com/NCAR/TCDiag-Realtime/releases>`_.
 
 **Acknowledgments**
 
-We thank all of the METplus sponsors including: Developmental Testbed
-Center (DTC) partners (NOAA, NCAR, USAF, and NSF), along with
-NOAA/Office of Atmospheric Research (OAR), NOAA/National Weather Service,
-NOAA/Joint Technology Transfer Program (JTTI),
-NOAA/Subseasonal to Seasonal (S2S) Project, NOAA/Unified Forecast System
-Research to Operations Project (UFS R2O), Met Office and the Naval Research
-Laboratory (NRL). Thanks also go to the staff at the DTC for their help,
-advice, and many types of support. Finally, the National Center for
-Atmospheric Research (NCAR), sponsored by National Science Foundation.
-
+This material is based upon work supported by the NSF National Center for Atmospheric Research, which is a major facility sponsored by the U.S. National Science Foundation under Cooperative Agreement No. 1852977. Funding was provided by the NOAA/Joint Technology Transfer Initiative (JTTI). We also thank all of the METplus sponsors including: Developmental Testbed Center (DTC) partners (NOAA, NCAR, USAF, and NSF), along with NOAA/Office of Atmospheric Research (OAR), NOAA/National Weather Service,
+NOAA/Joint Technology Transfer Program (JTTI), NOAA/Subseasonal to Seasonal (S2S) Project, NOAA/Unified Forecast System Research to Operations Project (UFS R2O), Met Office and the Naval Research Laboratory (NRL). Thanks also go to the staff at the DTC for their help, advice, and many types of support.
 
 .. toctree::
    :titlesonly:
    :numbered: 4
 
    installation
-   line
-   box
-   bar
-   difficulty_index
-   eclv
-   ens_ss
-   contour
-   performance_diagram
-   reliability_diagram
-   roc_diagram
-   histogram
-   histogram_2d
-   s2s_blocking
-   weather_regime
-   hovmoeller
-   spacetime
-   make_maki_enso
-   mjo_rmm_omi
-   taylor_diagram
-   tcrmw_cross_section
-   stratosphere_diagnostics
-   polar_plot
-   wind_rose
-   fv3_physics
    release-notes
    references
 
