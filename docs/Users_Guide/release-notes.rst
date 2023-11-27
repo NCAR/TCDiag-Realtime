@@ -1,5 +1,5 @@
 *****************************
-METplotpy Release Information
+TCDiag-Realtime Release Information
 *****************************
 
 When applicable, release notes are followed by the GitHub issue number which
@@ -54,7 +54,7 @@ TCDiag-Realtime Version 0.1-beta1 release notes (YYYYMMDD)
 
 
 
-METplotpy Upgrade Instructions
+TCDiag-Realtime Upgrade Instructions
 ==============================
 
 Upgrade instructions will be listed here if they are

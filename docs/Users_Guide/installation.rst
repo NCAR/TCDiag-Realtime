@@ -2,13 +2,10 @@
 Installation
 ************
 
-Installation guide for METplotpy
-================================
+Installation guide for TCDiag-Realtime
+======================================
 
-METplotpy is written entirely in Python and uses YAML configuration files
-and relies on the METcalcpy package. The version numbers (when provided)
-indicate the *minimum* version number for that package.  Some plots may require
-additional packages that are not listed below.
+TCDiag-Realtime is written entirely in Bash and Python and uses YAML configuration files. It relies on the METplus, MET, METdataio, METcalcpy, and METplotpy packages. The version numbers (when provided) indicate the *minimum* version number for that package.  Some plots may require additional packages that are not listed below.
 
 .. _python_req:
 
