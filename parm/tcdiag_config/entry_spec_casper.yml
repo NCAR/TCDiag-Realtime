@@ -1,0 +1,8 @@
+---
+model_entries:
+  - model_spec: /d1/projects/TCDiag/parm/tcdiag_config/gfs_spec_seneca.yml
+    atcf_id: al172022
+    model_time: 2022-11-09T12:00:00
+    atcf_file: /d1/projects/TCDiag/al092022_test/input/aal092022_OFCL_SHIP_AVNO.dat
+    output_dir: /d1/projects/TCDiag/al092022_test/output
+
