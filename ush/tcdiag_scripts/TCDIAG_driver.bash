@@ -113,6 +113,23 @@ then
 
 fi
 
+
+# Set paths and environment
+if [[ ${long_hostname} == "seneca" ]]
+then
+
+   echo ""
+   echo "Running on Seneca"
+   echo ""
+
+   realtime="False"
+
+   dtg="2022092400"
+
+fi
+
+
+
 echo ""
 echo "Start TCDIAG run script for ${dtg}"
 echo ""

@@ -100,6 +100,12 @@ then
    long_hostname="cheyenne"
 fi
 
+if [[ ${short_hostname} == "seneca" ]]
+then
+   long_hostname="seneca"
+fi
+
+
 
 if [[ ${long_hostname} == "" ]]
 then
@@ -129,6 +135,27 @@ then
    logdir="${maindir}/logs/"
 
 fi
+
+
+# Set paths and environment
+if [[ ${long_hostname} == "seneca" ]]
+then
+
+   # JLV: Added this so that the code can access the needed NetCFD library shared object.
+   #export LD_LIBRARY_PATH=/usr/local/netcdf/lib:$LD_LIBRARY_PATH
+   #export PATH=${PATH}:/usr/local/netcdf:/usr/local/netcdf/lib:
+
+   realtime="False"
+   beta="-beta"
+   stormlist_dir="/d1/projects/TCDiag/al092022_test/input/"
+   output_base_dir="/d1/projects/TCDiag/al092022_test/python_v2/"
+   maindir="$(pwd)/"
+   configdir="${maindir}/parm/tcdiag_config/"
+   logdir="${output_base_dir}"
+
+fi
+
+
 
 
 # Set paths and environment
