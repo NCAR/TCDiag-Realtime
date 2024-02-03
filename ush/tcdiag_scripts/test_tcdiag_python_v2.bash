@@ -8,7 +8,7 @@ echo " Entering test_tcdiag_python_v2.bash"
 echo "==========================================================="
 echo ""
 
-maindir="/d1/projects/TCDiag/TCDiag-Realtime/ush/tcdiag_scripts/"
+maindir="/d1/projects/TCDiag/TCDiag-Realtime/"
 input_base_dir="/d1/projects/TCDiag/al092022_test/input/"
 output_base_dir="/d1/projects/TCDiag/al092022_test/python_v2/"
 configdir="${maindir}/parm/tcdiag_config/"
@@ -22,7 +22,7 @@ echo ""
 
 
 # Run tcdiag_driver to create the diagnostics for this initialization for a given storm/forecast
-cd tc_diag_driver/tc_diag_driver
+cd ${maindir}tc_diag_driver/tc_diag_driver
 python -m tc_diag_driver.driver ../../parm/tcdiag_config/${model_spec_filename} ${input_base_dir}current_operational_gdland.dat > ${logdir}tcdiag_aal092022_20220924_00.log 2>&1
 
 echo ""
