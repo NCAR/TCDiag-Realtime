@@ -8,10 +8,10 @@ echo " Entering test_tcdiag_python_v2.bash"
 echo "==========================================================="
 echo ""
 
-maindir="/d1/projects/TCDiag/TCDiag-Realtime/"
+maindir="/d1/projects/TCDiag/"
 input_base_dir="/d1/projects/TCDiag/al092022_test/input/"
 output_base_dir="/d1/projects/TCDiag/al092022_test/python_v2/"
-configdir="${maindir}/parm/tcdiag_config/"
+configdir="${maindir}TCDiag-Realtime/parm/tcdiag_config/"
 logdir="${output_base_dir}"
 model_spec_filename="entry_spec_seneca_test.yml"
 
