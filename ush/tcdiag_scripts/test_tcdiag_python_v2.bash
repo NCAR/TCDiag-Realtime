@@ -32,13 +32,39 @@ echo ""
 echo "conda activate tc_diag_driver_deploy"
 conda activate tc_diag_driver_deploy
 
+echo ""
+echo "Here are the details of the tc_diag_driver_deploy conda environment:"
+echo "list -n tc_diag_driver_deploy"
+conda list -n tc_diag_driver_deploy
+echo ""
+
 
 # Run tcdiag_driver to create the diagnostics for this initialization for a given storm/forecast
+echo "Changing directory to the tcdiag_driver run location:"
+echo "cd ${maindir}tc_diag_driver/tc_diag_driver"
 cd ${maindir}tc_diag_driver/tc_diag_driver
+
+# Provide the details of what will be run
+echo "Ready to run tcdiag_driver using the following model spec file:"
+echo "cat ../../parm/tcdiag_config/${model_spec_filename}"
+cat ../../parm/tcdiag_config/${model_spec_filename}
+echo ""
+
+echo "Will run using the following land database:"
+echo "${input_base_dir}current_operational_gdland.dat"
+echo ""
+
+echo "Now running the tcdiag_driver using the following command:"
+echo "python -m tc_diag_driver.driver ../../parm/tcdiag_config/${model_spec_filename} ${input_base_dir}current_operational_gdland.dat > ${logdir}tcdiag_aal092022_20220924_00.log 2>&1"
 python -m tc_diag_driver.driver ../../parm/tcdiag_config/${model_spec_filename} ${input_base_dir}current_operational_gdland.dat > ${logdir}tcdiag_aal092022_20220924_00.log 2>&1
 
 echo ""
-echo "output_base_dir = ${output_base_dir}"
+echo "Output should be written to output_base_dir = ${output_base_dir}"
+echo ""
+echo "Here is the result of the output written to log file: ${logdir}tcdiag_aal092022_20220924_00.log"
+cat ${logdir}tcdiag_aal092022_20220924_00.log"
+
+echo ""
 echo "Have finished running for: ${model_spec_filename}"
 
 exit 0
