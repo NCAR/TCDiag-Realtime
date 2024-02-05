@@ -46,8 +46,8 @@ cd ${maindir}tc_diag_driver/tc_diag_driver
 
 # Provide the details of what will be run
 echo "Ready to run tcdiag_driver using the following model spec file:"
-echo "cat ../../parm/tcdiag_config/${model_spec_filename}"
-cat ../../parm/tcdiag_config/${model_spec_filename}
+echo "cat ${configdir}${model_spec_filename}"
+cat ${configdir}${model_spec_filename}
 echo ""
 
 echo "Will run using the following land database:"
@@ -62,7 +62,7 @@ echo ""
 echo "Output should be written to output_base_dir = ${output_base_dir}"
 echo ""
 echo "Here is the result of the output written to log file: ${logdir}tcdiag_aal092022_20220924_00.log"
-cat ${logdir}tcdiag_aal092022_20220924_00.log"
+cat "${logdir}tcdiag_aal092022_20220924_00.log"
 
 echo ""
 echo "Have finished running for: ${model_spec_filename}"
