@@ -20,13 +20,25 @@ echo " Currently running on "
 pwd
 echo ""
 
+# Now call the python embedding script as a standalone python run
+# NOTE: This uses a conda environment that includes the requests package.
+# This environment can be activated as follows: (2nd answer from https://stackoverflow.com/questions/60303997/activating-conda-environment-from-bash-script)
+# NOTE: the path below is for Seneca
+echo ""
+echo "source /d1/personal/jvigh/conda/etc/profile.d/conda.sh"
+source /d1/personal/jvigh/conda/etc/profile.d/conda.sh
+
+echo ""
+echo "conda activate tc_diag_driver_deploy"
+conda activate tc_diag_driver_deploy
+
 
 # Run tcdiag_driver to create the diagnostics for this initialization for a given storm/forecast
 cd ${maindir}tc_diag_driver/tc_diag_driver
 python -m tc_diag_driver.driver ../../parm/tcdiag_config/${model_spec_filename} ${input_base_dir}current_operational_gdland.dat > ${logdir}tcdiag_aal092022_20220924_00.log 2>&1
 
 echo ""
-echo "output_dir = ${output_dir}"
+echo "output_base_dir = ${output_base_dir}"
 echo "Have finished running for: ${model_spec_filename}"
 
 exit 0
